@@ -18,6 +18,7 @@ Este projeto é um **site responsivo** (landinpage e blog) para apresentação d
 - **Next.js**
 - **Typescript**
 - **Tailwind**
+- **Contentlayer**
 
 
 ## 🚀 Como Rodar o Projeto
