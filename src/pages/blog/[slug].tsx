@@ -12,6 +12,8 @@ import {
   BreadcrumbList,
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb'
+import { Button } from '@/components/ui/button'
+import { useShare } from '@/hooks'
 
 export default function PostPage() {
   const router = useRouter()
@@ -21,6 +23,13 @@ export default function PostPage() {
   )!
 
   const publishedDate = new Date(post?.date).toLocaleDateString('pt-BR')
+  const postUrl = `https://site.set/blog/${slug}`
+
+  const { shareButtons } = useShare({
+    url: postUrl,
+    title: post.title,
+    text: post.description,
+  })
 
   return (
     <main className="mt-32 text-gray-100">
@@ -61,6 +70,7 @@ export default function PostPage() {
                 <Avatar.Image
                   src={post?.author.avatar?.trimEnd()}
                   alt={post?.title}
+                  size="sm"
                 />
                 <Avatar.Content>
                   <Avatar.Title>{post?.author.name}</Avatar.Title>
@@ -76,6 +86,27 @@ export default function PostPage() {
               <Markdown content={post.body.raw} />
             </div>
           </article>
+
+          <aside className="space-y-6">
+            <div className="rounded-lg bg-gray-700 p-4 md:p-6">
+              <h2 mb-4 text-heading-xs text-gray-100>
+                Compartilhar
+              </h2>
+              <div className="space-y-3">
+                {shareButtons.map((provider) => (
+                  <Button
+                    key={provider.provider}
+                    variant="outline"
+                    className="w-full justify-start gap-2"
+                    onClick={() => provider.action()}
+                  >
+                    {provider.icon}
+                    {provider.name}
+                  </Button>
+                ))}
+              </div>
+            </div>
+          </aside>
         </div>
       </div>
     </main>
