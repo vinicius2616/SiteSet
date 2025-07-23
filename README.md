@@ -1,9 +1,8 @@
 # 🛍️ Plataforma de Venda de Produtos Online
 
-
 ## 📌 Descrição
 
-Este projeto é um **site responsivo** (landinpage e blog) para apresentação de uma **plataforma de venda de produtos online**, oferecendo uma experiência clara e atrativa para potenciais clientes.  
+Este projeto é um **site responsivo** (landing page e blog) para apresentação de uma **plataforma de venda de produtos online**, oferecendo uma experiência clara e atrativa para potenciais clientes.
 
 ## ✅ Funcionalidades
 
@@ -20,7 +19,6 @@ Este projeto é um **site responsivo** (landinpage e blog) para apresentação d
 - **Tailwind**
 - **Contentlayer**
 
-
 ## 🚀 Como Rodar o Projeto
 
 ```bash
@@ -35,3 +33,4 @@ npm install
 
 # Inicie o projeto
 npm run dev
+```
