@@ -5,7 +5,7 @@ import { Post } from 'contentlayer/generated'
 import { Inbox } from 'lucide-react'
 import { useSearchParams } from 'next/navigation'
 import { PostCard } from './components/post-card'
-import { PostGridCard } from './components/post-card/post-grid-card'
+import { PostGridCard } from './components/post-grid-card'
 
 export type BlogListProps = {
   posts: Post[]
